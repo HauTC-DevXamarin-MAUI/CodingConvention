@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/reponsive.css">
     <link rel="stylesheet" href="./assets/icon/themify-icons/themify-icons.css">
-
-
 </head>
 
 <body>
     <div id="main">
+        <!-- Header -->
         <div id="header">
             <!--Begin Nav-->
             <ul id="nav">
@@ -45,15 +44,15 @@
 
 
         </div>
-
+        <!-- Slider -->
         <div id="slider">
-
             <div class="text-content">
                 <h2 class="text-heading">New York</h2>
                 <div class="text-decscription"> However play in New York </div>
             </div>
         </div>
 
+        <!-- Content -->
         <div id="content">
             <!-- Aboutt Section -->
             <div id="band" class="content-section">
@@ -170,6 +169,7 @@
         </div>
 
     </div>
+    <!-- Footer -->
     <div id="footer">
         <div class="social-list">
             <a href="#"><i class="ti-facebook"></i></a>
@@ -182,6 +182,7 @@
         <p class="copy-right">Powered by <a href="">w3.css</a></p>
     </div>
 
+    <!-- Modal -->
     <div class="modal js-modal">
         <div class="modal-container js-modal-container">
             <div class="modal-close js-modal-close">
@@ -192,43 +193,48 @@
             </header>
             <div class="modal-body">
                 <label for="quality" class="modal-lable">
-                                   <i class="ti-shopping-cart"></i>
-                                   Tickets, buy 15$ per person
-                              </label>
+                    <i class="ti-shopping-cart"></i>
+                    Tickets, buy 15$ per person
+                </label>
                 <input id="quality" type="text" class="modal-input" placeholder="How many?">
 
                 <label for="email-input" class="modal-lable">
-                                   <i class="ti-user"></i>
-                                   Send to
-                              </label>
+                    <i class="ti-user"></i>
+                    Send to
+                </label>
                 <input id="email-input" type="email" class="modal-input" placeholder="Enter email">
 
                 <button id="buy-tickets">Pay
-                                   <i class="ti-check"></i>
-                              </button>
+                    <i class="ti-check"></i>
+                </button>
             </div>
             <footer class="modal-footer">
                 <p class="modal-help">Need <a href="#">help?</a></p>
             </footer>
         </div>
     </div>
+
+    <!-- java script -->
     <script>
         const buyBtns = document.querySelectorAll('.js-buy-ticket')
         const modal = document.querySelector('.js-modal')
         const modalClose = document.querySelector('.js-modal-close')
         const modalContainer = document.querySelector('.js-modal-container')
 
+        // add event Click cho btn buyticket
         for (const buyBtn of buyBtns) {
             buyBtn.addEventListener('click', showBuyTicket)
         }
 
+        // Hàm show Modal cho btn buyticket
         function showBuyTicket() {
             modal.classList.add('open')
         }
-
+        // Hàm  ẩn Modal cho btn buyticket
         function closeBuyTicket() {
             modal.classList.remove('open')
         }
+
         modalClose.addEventListener('click', closeBuyTicket)
 
         modal.addEventListener('click', closeBuyTicket)
@@ -250,12 +256,10 @@
                     header.style.height = null;
                 }
             }
-            //tự động đóng khi chon menu
+        //tự động đóng khi chon menu
         var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
         for (var i = 0; i < menuItems.length; i++) {
             var menuItem = menuItems[i];
-
-
 
             menuItem.onclick = function(event) {
                 var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
@@ -264,7 +268,6 @@
                 } else {
                     event.preventDefault();
                 }
-
             }
         }
     </script>
